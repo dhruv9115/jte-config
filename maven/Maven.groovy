@@ -1,5 +1,5 @@
 def void build(){
-        dir("$WORKSPACE/${JOB_NAME}"){
+        dir("$WORKSPACE"){
             sh "./mvnw clean package"
         }
 

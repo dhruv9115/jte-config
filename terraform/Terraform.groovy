@@ -1,5 +1,6 @@
 def void init(String path){
-	dir("$WORKSPACE/path"){
+	dir("$WORKSPACE/$path"){
+		sh "ls -lrt"
 		withCredentials([usernamePassword(credentialsId: 'aws_admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
   		sh "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
   		sh "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"

@@ -1,8 +1,8 @@
 def updateProvider(String path){
     withCredentials([usernamePassword(credentialsId: 'aws_admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
     	dir("$WORKSPACE/$path"){
-    		writeFile file: 'terraform.tfvars', text: '''AWS_ACCESS_KEY = "$AWS_ACCESS_KEY_ID"
-AWS_SECRET_KEY = "$AWS_SECRET_ACCESS_KEY"
+    		writeFile file: 'terraform.tfvars', text: '''AWS_ACCESS_KEY = "''' + "$AWS_ACCESS_KEY_ID" +'''"
+AWS_SECRET_KEY = ''' + "$AWS_SECRET_ACCESS_KEY" + '''
 AWS_REGION = "us-east-1"'''
     	}
     }

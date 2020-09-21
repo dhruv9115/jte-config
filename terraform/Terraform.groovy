@@ -1,4 +1,5 @@
 def void init(String path){
+tool name: 'Terraform', type: 'terraform'
 	dir("$WORKSPACE/path"){
 	    sh "terraform init"   
 	}           

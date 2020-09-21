@@ -7,7 +7,8 @@ def void init(String path){
   		sh "export AWS_DEFAULT_REGION=us-east-1"
 }	
 		sh "docker pull hashicorp/terraform:light"
-	    sh "docker run hashicorp/terraform:light init"   
+	    sh "docker run -w /app  -v `pwd`:/app hashicorp/terraform:light init"
+	    sh "docker run -w /app  -v `pwd`:/app hashicorp/terraform:light plan"   
 	}           
  }
  

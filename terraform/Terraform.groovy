@@ -8,7 +8,11 @@ def void init(String path){
 }	
 		sh "docker pull hashicorp/terraform:light"
 	    sh "docker run -w /app  -v `pwd`:/app hashicorp/terraform:light init"
-	    sh "docker run -w /app  -v `pwd`:/app hashicorp/terraform:light plan"   
+	    withAWS(credentials: 'aws_admin', region: 'us-east-1') {
+    		sh "docker run -w /app -v /root/.aws:/root/.aws -v `pwd`:/app hashicorp/terraform:light plan"
+}
+	    
+	       
 	}           
  }
  

@@ -30,7 +30,7 @@ def void createTaskDefFile(){
     
 def String returnJson(){
 
-	return '''[
+	String json = '''[
   {
     "name": "anagram",
     "image": '''+ "705110607627.dkr.ecr.us-east-1.amazonaws.com/anagrams:${BUILD_NUMBER}" + ''',
@@ -53,6 +53,10 @@ def String returnJson(){
     ]
   }
 ]'''
+
+	echo "$json"
+	
+	return json
         
     }
 

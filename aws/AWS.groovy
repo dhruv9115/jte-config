@@ -1,6 +1,6 @@
 def void createTaskDefFile(){
 
-	sh "rm anagrams.json"
+	//sh "rm -f anagrams.json"
         writeFile file: 'anagrams.json', text: '''[
   {
     "name": "anagram",

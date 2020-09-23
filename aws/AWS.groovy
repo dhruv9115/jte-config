@@ -66,7 +66,7 @@ def void updateService(){
 	//createTaskDefFile()
 	
     withCredentials([usernamePassword(credentialsId: 'aws_admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {  
-    	String aws = "docker run --rm -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -v `pwd`:/app amazon/aws-cli"
+    	String aws = "docker run --rm -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_DEFAULT_REGION=us-east-1 -v `pwd`:/app amazon/aws-cli"
     	//sh "$aws ecs register-task-definition --family anagrams-task --cli-input-json " + returnJson()
     	/*String TASK_REVISION = sh (
     script: 'aws ecs describe-task-definition --task-definition anagrams-task | egrep "revision" | tr \"/\" \" \" | awk \'{print $2}\' | sed \'s/"$//\'',

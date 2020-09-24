@@ -4,3 +4,10 @@ def void build(){
         }
 
     }
+    
+ def void test(){
+         dir("$WORKSPACE"){
+            sh "./mvnw clean test \"-Durl=${url}\""
+        }
+     }
+

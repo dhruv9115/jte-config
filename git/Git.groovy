@@ -3,3 +3,10 @@ def clone_repo(){
     sh "ls -lrt"
     sh "pwd"
 }
+
+
+def clone_test_repo(){  
+    git 'https://github.com/dhruv9115/generate_anagram-test.git'
+    sh "ls -lrt"
+    sh "pwd"
+}

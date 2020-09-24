@@ -5,7 +5,7 @@ def void build(){
 
     }
     
- def void test(){
+ def void runTest(){
          dir("$WORKSPACE"){
             sh "./mvnw clean test \"-Durl=${url}\""
         }

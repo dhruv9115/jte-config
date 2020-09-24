@@ -26,7 +26,8 @@ def void initAndApply(String path){
 
 }	    
 	       
-	}           
+	} 
+	cleanWs()          
  }
  
  def void plan(String path){
